@@ -1,7 +1,4 @@
-import { FaFileInvoice, FaHome, FaPowerOff, FaUser, FaUsers } from "react-icons/fa";
-import Logo from "../components/Logo";
 import React from "react";
-import Sidenav from "../components/SideNav";
 
 const Dashboard = () => {
   return (
