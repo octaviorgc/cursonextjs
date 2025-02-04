@@ -2,7 +2,6 @@ import postgres from 'postgres';
 import bcrypt from 'bcrypt';
 import { invoices, customers, revenue, users } from '../lib/placeholder-data';
 
-
 const sql = postgres(process.env.POSTGRES_URL!, { ssl: 'require' });
 
 async function seedUsers() {
@@ -104,15 +103,14 @@ async function seedRevenue() {
 
 export async function GET() {
   try {
-    await sql.begin((sql) => [
-      seedUsers(),
-      seedCustomers(),
-      seedInvoices(),
-      seedRevenue(),
-    ]);
+    // Llamamos a las funciones de siembra sin necesidad de sql.begin()
+    await seedUsers();
+    await seedCustomers();
+    await seedInvoices();
+    await seedRevenue();
 
     return Response.json({ message: 'Database seeded successfully' });
   } catch (error) {
-    return Response.json({ error }, { status: 500 });
+    return Response.json({ error}, { status: 500 });
   }
 }
