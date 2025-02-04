@@ -13,7 +13,7 @@ const Home = () => {
                 </p>
                 <a href ="#" 
                 className="flex items-center gap-5 self-start rounded-lg bg-blue-500 px-6 py-3 text-sm font-medium text-white transition-colors hover:bg-blue-base">
-                <span>loging</span> <BsArrowUpRight />
+                <span>Login</span> <BsArrowUpRight />
                 </a>
             </div>
             <div className="flex items-center justify-center p-6 md:w-3/5 md:px-28 md:py-12">
